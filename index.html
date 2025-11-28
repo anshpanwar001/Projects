@@ -4,23 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Project</title>
+    <title>Sorting Visualiser</title>
 </head>
 
 <body>
     <header>
-        <h1>Portfolio Website</h1>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Projects</a>
+        <h1>SORTING VISUALISER </h1>
     </header>
 
-    <main>
-        <h5>Name :- Ansh Panwar</h5>
-        <h5>Software Developer with AI</h5>
-    </main>
+    <section class="controls">
+        <button id="generate" oneclick=generateArray()>Generate Array</button>
+        <div class="control-group">
+            <label for="size">Array Size</label>
+            <input type="range" id="size" min="5" max="150" value="50" onchange="generateArray()">
+        </div>
+        <div class="control-group">
+            <label for="speed">Speed</label>
+            <input type="range" id="speed" min="10" max="200" value="100">
+        </div>
+        <button onclick="bubbleSort()">Bubble Sort</button>
+        <button onclick="selectionSort()">Selection Sort</button>
+        <button onclick="insertionSort()">Insertion Sort</button>
+        <button onclick="mergeSortCaller()">Merge Sort</button>
+        <button onclick="quickSortCaller()">Quick Sort</button>
+    </section>
+
+    <section id="bars-container"></section>
 
 
+
+    <script src="script.js"></script>
+    <script src="algorithms/bubble.js"></script>
+    <script src="algorithms/selection.js"></script>
+    <script src="algorithms/insertion.js"></script>
+    <script src="algorithms/merge.js"></script>
+    <script src="algorithms/quick.js"></script>
 </body>
 
 </html>
