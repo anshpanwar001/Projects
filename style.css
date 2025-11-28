@@ -1,3 +1,159 @@
-h1 {
-    color: blueviolet;
+/* ==========================================
+   Global Styles + Glassmorphism + Material Design
+   Palette:
+   Background: #0d0d0d
+   Primary Glow: #00eaff
+   Accent Glow: #ff4ecd
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0d0d0d, #111);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   GLASS CARD UTILITY
+   ========================================== */
+
+.glass {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   Header
+   ========================================== */
+
+header {
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00eaff, #ff4ecd);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(0, 234, 255, 0.4);
+}
+
+/* ==========================================
+   Controls Section
+   ========================================== */
+
+.controls {
+    margin: 20px auto;
+    padding: 20px;
+    width: 92%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls button {
+    padding: 12px 20px;
+    background: rgba(0, 234, 255, 0.12);
+    color: #ffffff;
+    border: 1px solid rgba(0, 234, 255, 0.35);
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    backdrop-filter: blur(10px);
+}
+
+.controls button:hover {
+    background: rgba(255, 78, 205, 0.2);
+    border-color: rgba(255, 78, 205, 0.55);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 12px rgba(255, 78, 205, 0.4);
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+    color: #dddddd;
+}
+
+.controls input[type="range"] {
+    width: 150px;
+    accent-color: #00eaff;
+}
+
+/* ==========================================
+   Bars Container (Glassmorphism Panel)
+   ========================================== */
+
+#bars-container {
+    width: 92%;
+    min-height: 500px;
+    margin: 25px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.bar {
+    background: linear-gradient(180deg, #00eaff, #009db2);
+    width: 10px;
+    border-radius: 8px 8px 0 0;
+    transition: height 0.15s ease, background 0.15s ease;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
+}
+
+/* Animation highlight states */
+.bar.active {
+    background: linear-gradient(180deg, #ff4ecd, #d600a4) !important;
+    box-shadow: 0 0 14px rgba(255, 78, 205, 0.6);
+}
+
+.bar.compare {
+    background: linear-gradient(180deg, #ffd000, #c9a200) !important;
+    box-shadow: 0 0 10px rgba(255, 208, 0, 0.5);
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .controls button {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+
+    #bars-container {
+        min-height: 350px;
+        padding: 10px;
+    }
 }
